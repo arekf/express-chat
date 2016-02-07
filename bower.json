@@ -1,0 +1,23 @@
+{
+  "name": "chat",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Arkadiusz Fal <arek@arekf.net>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/arekf/express-chat",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.0",
+    "jquery.cookie": "jquery-cookie#^1.4.1"
+  }
+}

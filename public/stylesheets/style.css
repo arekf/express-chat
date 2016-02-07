@@ -1,8 +1,174 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/* reset */
+a, abbr, address, article, aside, audio, b, blockquote, body, canvas,
+caption, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset,
+figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup,
+html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav,
+object, ol, p, pre, q, samp, section, small, span, strong, sub, summary,
+sup, table, tbody, td, tfoot, th, thead, time, tr, ul, var, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-weight: inherit;
+  font-style: inherit;
+  vertical-align: baseline;
 }
 
-a {
-  color: #00B7FF;
+article, aside, canvas, details, figcaption, figure, footer, header,
+hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+mark {
+  background-color: transparent;
+}
+
+a, ins, del {
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+caption, th {
+  text-align: left;
+}
+
+q:after, q:before {
+  content: "";
+}
+
+header {
+  font-family: Monaco, Consolas, Courier;
+  display: inline-block;
+  background-color: #2a63a7;
+  font-weight: bold;
+  width: 100%;
+  border-bottom: 3px solid #669ad9;
+}
+
+header a {
+  display: inline-block;
+  height: 30px;
+  color: white;
+  padding: 10px 0 0 20px;
+}
+
+.chat {
+  font: normal 1em "Lucida Grande", Lucida, Verdana, sans-serif;
+  margin: 50px auto 0 auto;
+  width: 900px;
+}
+
+.chat .messages {
+  border: 1px solid #bcbcbc;
+  font-size: 0.8em;
+  max-height: 370px;
+  min-height: 370px;
+  overflow: auto;
+}
+
+.chat .message:nth-child(even) {
+  background-color: #f7f9fc;
+}
+
+.message .nick, .message .txt {
+  display: inline-block;
+}
+
+.message {
+  border-bottom: 1px dotted #bcbcbc;
+  padding: 10px 0 10px 0;
+}
+
+.message:last-child {
+  border-bottom: none
+}
+
+.message .nick {
+  display: table-cell;
+  font-weight: bold;
+  padding-right: 10px;
+  text-align: right;
+  color: #7d7d7d;
+  width: 100px;
+}
+
+.message .txt {
+  display: table-cell;
+  border-left: 1px dotted #bcbcbc;
+  border-right: 1px dotted #bcbcbc;
+  vertical-align: middle;
+  padding: 0 10px;
+  text-align: justify;
+  width: 670px;
+}
+
+.message .txt a {
+  color: #2a63a7;
+}
+
+.message .txt a:hover {
+  text-decoration: underline;
+}
+
+.message .time {
+  color: #7d7d7d;
+  display: table-cell;
+  padding-left: 10px;
+}
+
+.form {
+  font: normal 1em "Lucida Grande", Lucida, Verdana, sans-serif;
+  margin: 20px auto 0 auto;
+  width: 900px;
+}
+
+.form .nickname {
+  display: inline-block;
+  font-size: 0.8em;
+  margin-right: 10px;
+  text-align: right;
+  width: 100px;
+}
+
+.form form, .form form input {
+  display: inline;
+}
+
+.form input[name="txt"] {
+  font-size: 0.8em;
+  height: 20px;
+  padding: 5px;
+  width: 770px;
+}
+
+.form input[name="nickname"] {
+  float: left;
+  font-size: 0.8em;
+  margin-left: 3px;
+  margin-right: 7px;
+  text-align: right;
+  padding: 5px;
+  height: 20px;
+  width: 91px;
+}
+
+form[name="nickname"] {
+  display: none;
+  -moz-user-select   : none;
+  -khtml-user-select : none;
+  -webkit-user-select: none;
+  -o-user-select     : none;
+  user-select        : none;
+}
+
+.hidden {
+  display: none;
 }

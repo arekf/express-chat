@@ -1,5 +1,21 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  section.chat
+    div(data-js-chat)
+      div.messages(data-js-messages)
+        div.hidden(data-js-template)
+          .message(data-js-message-id='!id!')
+            .nick !author!
+            .txt !message!
+            .time !time!
+      .form
+        input(name='nickname' data-js-nickname)
+      .form
+        form(data-js-message-form)
+          input(data-js-text-input name='txt')
+
+block javascripts
+  script(src='components/jquery/dist/jquery.min.js')
+  script(src='components/jquery.cookie/jquery.cookie.js')
+  script(src='javascripts/chat.js')
