@@ -1,17 +1,14 @@
 #!/usr/bin/env node
 
-var dbFileName = 'db/development.sqlite';
-
-var sqlite3 = require('sqlite3').verbose();
-var db = new sqlite3.Database(dbFileName);
+var db = require('../app/db.js');
 var fs = require('fs');
 
-if (fs.existsSync(dbFileName)) {
+if (fs.existsSync(db.fileName)) {
   console.log("Database has already been set up. Exiting.");
 } else {
   console.log("Preparing database...");
-  db.serialize(function() {
-    db.run(
+  db.connection.serialize(function() {
+    db.connection.run(
       'CREATE TABLE messages (' +
         'id INTEGER PRIMARY KEY AUTOINCREMENT,' +
         'chat_id VARCHAR(8) NOT NULL,' +
@@ -23,5 +20,5 @@ if (fs.existsSync(dbFileName)) {
   });
   console.log("Database has been set up.");
 
-  db.close();
+  db.connection.close();
 }
